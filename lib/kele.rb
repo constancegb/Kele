@@ -6,7 +6,7 @@ class Kele
   base_uri 'https://www.bloc.io/api/v1'
 
   def initialize(email, password)
-    response = self.class.post("/sessions", body: { "email": email, "password": password} )
+    response = self.class.post("/sessions", body: { "email": email, "password": password} ) #retrieve the authentication token
     @auth_token = response["auth_token"]
   end
 
