@@ -10,7 +10,12 @@ module Messages
   end
 
   def create_message(sender, recipient_id, subject, stripped_text)
-      self.class.post("/messages", headers: { "authorization" => @authorization_token }, body: { "sender": sender, "recipient_id": recipient_id, "subject": subject, "stripped_text": stripped_text })
+      self.class.post("/messages",
+                        headers: { "authorization" => @auth_token },
+                        body: { "sender": sender,
+                                "recipient_id": recipient_id,
+                                "subject": subject,
+                                "stripped_text": stripped_text })
   end
 
 end
